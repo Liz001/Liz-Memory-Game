@@ -81,12 +81,9 @@ function setRating(moves) {
     if (moves > stars3 && moves < stars2) {
         $ratingStars.eq(2).removeClass('fa-star').addClass('fa-star-o');
         rating = 2;
-    } else if (moves > stars2 && moves < stars1) {
+    } else if (moves > stars2) {
         $ratingStars.eq(1).removeClass('fa-star').addClass('fa-star-o');
         rating = 1;
-    } else if (moves > stars1) {
-        $ratingStars.eq(0).removeClass('fa-star').addClass('fa-star-o');
-        rating = 0;
     }
     return {
         score: rating
@@ -125,7 +122,9 @@ $restart.on('click', function() {
         confirmButtonText: 'Yes, Restart Game!'
     }).then(function(isConfirm) {
         if (isConfirm) {
-            initGame();
+          match = 0,
+          moves = 0,
+          initGame();
         }
     });
 });
