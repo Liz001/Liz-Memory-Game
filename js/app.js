@@ -58,6 +58,7 @@ function initGame() {
     // The shuffle function shuffles the icons array
     var cards = shuffle(icons);
     $deck.empty();
+    allOpen = [];
     // Set start game with no matching cards and zero moves
     match = 0;
     moves = 0;
